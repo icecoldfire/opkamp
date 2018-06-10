@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ik ga op kamp</title>
+</head>
+<body>
+<h1>Ik ga op kamp</h1>
+<p>Maak hier je ik ga op kamp banner.</p>
+<style>
+input, textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+button {
+    background-color: #45a049;
+}
+body {
+    background-color: #cccccc;
+}
+</style>
+<form action="/generate" method="POST">
+    <label>Template:</label>
+    <select name="image" required>
+		<option value="1.jpg" selected>1</option>
+		<option value="2.jpg">2</option>
+		<option value="3.jpg">3</option>
+		<option value="4.png">4</option>
+		<option value="5.png">5</option>
+		<option value="6.png">6</option>
+		<option value="7.png">7</option>
+		<option value="8.jpg">8</option>
+		<option value="9.jpg">9</option>
+		<option value="10.JPG">10</option>
+		<option value="11.jpg">11</option>
+		<option value="12.JPG">12</option>
+	</select>
+    <label>Tekst:</label>
+    <textarea name="tekst" placeholder="Jouw kamp adres" required></textarea>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+</body>
+</html>
