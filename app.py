@@ -5,7 +5,7 @@ import base64
 import io
 
 from Banner import Banner
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 from datetime import datetime
 app = Flask(__name__)
 
@@ -15,6 +15,20 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
+    tekst = request.form["tekst"]
+    image = request.form["image"]
+    banner = Banner("img/" + image, tekst)
+    banner.schrijf()
+    imgByteArr = io.BytesIO()
+    banner.get_image().save(imgByteArr, format='JPEG')
+    imgByteArr = imgByteArr.getvalue()
+    response = make_response(imgByteArr)
+    response.headers.set('Content-Type', 'image/jpeg')
+    response.headers.set('Content-Disposition', 'attachment', filename='banner.jpg')
+    return response
+
+@app.route('/generate/base64', methods=['POST'])
+def generateBase64():
     tekst = request.form["tekst"]
     image = request.form["image"]
     banner = Banner("img/" + image, tekst)
