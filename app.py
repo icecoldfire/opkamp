@@ -17,7 +17,7 @@ def index():
 def generate():
     tekst = request.form["tekst"]
     image = request.form["image"]
-    banner = Banner("img\\" + image, tekst)
+    banner = Banner("img/" + image, tekst)
     banner.schrijf()
     imgByteArr = io.BytesIO()
     banner.get_image().save(imgByteArr, format='JPEG')
