@@ -14,7 +14,7 @@ class Banner:
         self.set_waarde(tekst)
 
     def reset(self, image):
-        self.img = Image.open(image)
+        self.img = Image.open(image).convert('RGB')
         self.draw = ImageDraw.Draw(self.img, 'RGB')
 
     def set_waarde(self, tekst):
