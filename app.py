@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/generate', methods=['GET', 'POST'])
+@app.route('/generate', methods=['POST'])
 def generate():
     tekst = request.form["tekst"]
     image = request.form["image"]

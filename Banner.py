@@ -5,7 +5,7 @@ from PIL import ImageDraw
 
 
 class Banner:
-    loc = (490, 60)
+    loc = (490, 55)
 
     def __init__(self, image, tekst):
         # font = ImageFont.truetype(<font-file>, <font-size>)
