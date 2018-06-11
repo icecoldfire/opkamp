@@ -1,0 +1,18 @@
+body {
+    background-color: #bdd732;
+}
+
+#result {
+	position: relative;
+	height:315px;
+	width:851px;  
+}
+
+#result > div {
+	position: absolute;
+	left: 0;
+	-webkit-transition: opacity 0.1s ease-in-out;
+	-moz-transition: opacity 0.1s ease-in-out;
+	-o-transition: opacity 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out;
+}
