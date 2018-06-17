@@ -10,7 +10,7 @@ function render(){
 		document.getElementById("tekst").value;
 		var http = new XMLHttpRequest();
 		var url = '/generate/base64';
-		var params = 'image=' + image + '&tekst=' + tekst;
+		var params = 'image=' + encodeURIComponent(image) + '&tekst=' + encodeURIComponent(tekst);
 		http.open('POST', url, true);
 
 		//Send the proper header information along with the request
