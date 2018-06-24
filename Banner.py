@@ -5,7 +5,8 @@ from PIL import ImageDraw
 
 
 class Banner:
-    loc = (490, 55)
+    locStart = (487, 55)
+    locEnd   = (720, 170)
 
     def __init__(self, image, tekst):
         # font = ImageFont.truetype(<font-file>, <font-size>)
@@ -21,7 +22,13 @@ class Banner:
         self.tekst = str(tekst.replace('\r',''))
 
     def schrijf(self):
-        self.draw.text(Banner.loc, self.tekst, (0, 0, 0), font=self.font)        
+        textsize = self.draw.textsize(self.tekst, font=self.font)
+        lefttop = (
+            int((self.locEnd[0]+self.locStart[0]-textsize[0])/2),
+            int((self.locEnd[1]+self.locStart[1]-textsize[1])/2)
+        )
+
+        self.draw.text(lefttop, self.tekst, (0, 0, 0), font=self.font)
 
     def save(self, uit='out.jpeg'):
         self.img.save(uit, "jpeg")
