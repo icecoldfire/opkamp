@@ -5,14 +5,14 @@ from PIL import ImageDraw
 
 
 class Banner:
-    locStart = (487, 55)
-    locEnd   = (720, 170)
 
-    def __init__(self, image, tekst):
+    def __init__(self, image, locStart, locEnd,  tekst):
         # font = ImageFont.truetype(<font-file>, <font-size>)
         self.font = ImageFont.truetype("OpenSans-Regular.ttf", 18)
         self.reset(image)
         self.set_waarde(tekst)
+        self.locStart = locStart
+        self.locEnd = locEnd
 
     def reset(self, image):
         self.img = Image.open(image).convert('RGB')
