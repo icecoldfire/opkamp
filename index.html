@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Ik ben op kamp</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha256-Md8eaeo67OiouuXAi8t/Xpd8t2+IaJezATVTWbZqSOw=" crossorigin="anonymous" />
-	<style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />	<script src="{{ url_for('static', filename='preview.js') }}"></script> 
+	
+<style>
 body {
     background-color: #bdd732;
 }
 </style>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 <body class="container">
 	<h1>Ik ben op kamp</h1>
 	<h6>Maak hier je "Ik ben op kamp" banner!</h6>
 	<p>	Selecteer eerst een template uit de lijst, daarna kan je uw kamp adres ingeven. Heb je dit gedaan? Druk dan op Maak! Jouw nieuwe facebook banner kan je dan downloaden via de rechter muisknop en op facebook plaatsen!</p>
 	<form action="/cgi-bin/web.cgi" method="get">
-		<div class="form-group">
+		<div class="mb-3">
 			<label>Template:</label>
-			<select  class="form-control" name="image" required>
+			<select  class="form-select" name="image" required>
 				<option value="1.jpg" selected>Banner 1</option>
 				<option value="2.jpg">Banner 2</option>
 				<option value="3.jpg">Banner 3</option>
@@ -33,7 +38,7 @@ body {
 				<option value="12.JPG">Banner 12</option>
 			</select>
 		</div>
-		<div class="form-group">
+		<div class="mb-3">
 			<label>Tekst:</label>
 			<textarea  class="form-control" name="tekst" placeholder="Jouw kamp adres" required rows="5"></textarea>
 		</div>
@@ -42,7 +47,7 @@ body {
 	</form>
 	<br>
 	<footer>
-	&copy; Stijn Goethals 2018 - <a href="https://www.facebook.com/PloegZingevingScoutsGidsenVlaanderen/">Ploeg Zingeving</a> - Check code on <a href="https://github.com/icecoldfire/op-kamp">Github</a>
+	&copy; Stijn Goethals 2022 - <a href="https://www.facebook.com/PloegZingevingScoutsGidsenVlaanderen/">Ploeg Zingeving</a> - Check code on <a href="https://github.com/icecoldfire/op-kamp">Github</a>
 	</footer>
 </body>
 </html>

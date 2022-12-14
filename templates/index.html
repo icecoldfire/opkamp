@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
     <title>Ik ben op kamp</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha256-Md8eaeo67OiouuXAi8t/Xpd8t2+IaJezATVTWbZqSOw=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />	<script src="{{ url_for('static', filename='preview.js') }}"></script> 
+	
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
 	<script src="{{ url_for('static', filename='preview.js') }}"></script> 
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body class="container">
 	<h1>Ik ben op kamp</h1>
 	<h6>Maak hier je "Ik ben op kamp" banner!</h6>
 	<p>	Selecteer eerst een template uit de lijst, daarna kan je uw kamp adres ingeven. Heb je dit gedaan? Druk dan op Download! Jouw nieuwe facebook banner kan je nu downloaden en op facebook plaatsen!</p>
 	<form action="/generate" method="POST">
-		<div class="form-group">
+		<div class="mb-3">
 			<label>Template:</label>
-			<select  class="form-control" name="image" id="image" required>
+			<select  class="form-select" name="image" id="image" required>
 				<option value="b2-1" selected>Banner 1</option>
 				<option value="b2-2">Banner 2</option>
 				<option value="b2-3">Banner 3</option>
@@ -36,7 +42,7 @@
 				<option value="12">Banner 18</option>
 			</select>
 		</div>
-		<div class="form-group">
+		<div class="mb-3">
 			<label>Tekst:</label>
 			<textarea class="form-control" name="tekst" id="tekst" placeholder="Jouw kamp adres" rows="5"></textarea>
 		</div>
@@ -46,7 +52,7 @@
 	<div id="result"></div>
 	<br>
 	<footer>
-	<a href="https://github.com/icecoldfire/">Stijn Goethals</a> &copy; 2018
+	<a href="https://github.com/icecoldfire/">Stijn Goethals</a> &copy; 2022
 	<br/>
 	Check code on <a href="https://github.com/icecoldfire/opkamp">Github</a> - Contributors: <a href="https://github.com/johannesBe/">johannes.berge</a>
 	<br/>
