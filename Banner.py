@@ -22,10 +22,12 @@ class Banner:
         self.tekst = str(tekst.replace('\r',''))
 
     def schrijf(self):
-        textsize = self.draw.textsize(self.tekst, font=self.font)
+        _, _, text_width, text_height = self.draw.textbbox((0, 0), self.tekst, font=self.font)
+
+        text_width -= 0
         lefttop = (
-            int((self.locEnd[0]+self.locStart[0]-textsize[0])/2),
-            int((self.locEnd[1]+self.locStart[1]-textsize[1])/2)
+            int((self.locEnd[0]+self.locStart[0]-text_width)/2),
+            int((self.locEnd[1]+self.locStart[1]-text_height)/2)
         )
 
         self.draw.text(lefttop, self.tekst, (0, 0, 0), font=self.font)

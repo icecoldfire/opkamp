@@ -22,7 +22,7 @@ try:
 except KeyError:
     image = "1.jpg"
 
-banner = Banner("img\\" + image, tekst)
+banner = Banner("img\\" + image, (487, 55), (720, 170), tekst)
 banner.schrijf()
 imgByteArr = io.BytesIO()
 banner.get_image().save(imgByteArr, format='JPEG')
